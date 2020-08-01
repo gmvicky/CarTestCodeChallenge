@@ -17,6 +17,7 @@ extension UITextField  {
         
         textRelay
             .asDriver()
+            .distinctUntilChanged()
             .drive(onNext: setPreservingCursor())
             .disposed(by: disposeBag)
         
