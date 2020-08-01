@@ -25,24 +25,24 @@ extension UITextField  {
             .disposed(by: disposeBag)
     }
     
-//    func setPreservingCursor() -> (_ newText: String?) -> Void {
-//        return { [weak self] aNewText in
-//            guard let `self` = self else { return }
-//            guard let newText = aNewText else {
-//                self.text = aNewText
-//                return
-//            }
-//            
-//            let textField = self
-//            if let textRange = textField.selectedTextRange {
-//                let cursorPosition = textField.offset(from: textField.beginningOfDocument, to: textRange.start) + newText.count - (textField.text?.count ?? 0)
-//                textField.text = newText
-//                if let newPosition = textField.position(from: textField.beginningOfDocument, offset: cursorPosition) {
-//                    textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
-//                }
-//            }
-//        }
-//    }
+    func setPreservingCursor() -> (_ newText: String?) -> Void {
+        return { [weak self] aNewText in
+            guard let `self` = self else { return }
+            guard let newText = aNewText else {
+                self.text = aNewText
+                return
+            }
+            
+            let textField = self
+            if let textRange = textField.selectedTextRange {
+                let cursorPosition = textField.offset(from: textField.beginningOfDocument, to: textRange.start) + newText.count - (textField.text?.count ?? 0)
+                textField.text = newText
+                if let newPosition = textField.position(from: textField.beginningOfDocument, offset: cursorPosition) {
+                    textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
+                }
+            }
+        }
+    }
 }
 
 extension UITextView {

@@ -8,28 +8,52 @@
 
 import Foundation
 import SQLite
+import RxSwift
 import RxCocoa
 
 protocol UserDatabaseManagerProtocol {
     static var shared: UserDatabaseManagerProtocol { get }
     func load()
-    func checkLogin(userName: String, password: String) -> Swift.Result<Bool, DatabaseError>
+    func checkLogin(userName: String, password: String) -> Swift.Result<(), DatabaseError>
+    var dbStatus: Observable<Swift.Result<(db: Connection, table: Table), DatabaseError>?> { get }
 }
 
 enum DatabaseError: Error {
     case invalidPath(String?)
     case customError(Error)
-    case readUserError
     case loadFailure
-    case duplicateUser
+    case readUserError
+    case invalidUserNamePassword
+    case duplicateUser // should not happen because username is unique. Added just for handling all cases
+    
+    var errorDescription: String {
+        switch self {
+        case .invalidPath(let path):
+            return "Invalid Path \(path ?? String())"
+        case .customError(let error):
+            return "\((error as Error?).debugDescription)"
+        case .loadFailure:
+            return "Database load failure"
+        case .readUserError:
+            return "Unable to read database"
+        case .invalidUserNamePassword:
+            return "Invalid user name/ password"
+        case .duplicateUser:
+            return "Duplicate user found"
+        }
+    }
+    
 }
 
 class SqliteDatabaseManager: UserDatabaseManagerProtocol {
     
     static var shared: UserDatabaseManagerProtocol { return sharedInstance }
     
-    private static let sharedInstance =  SqliteDatabaseManager()
+    var dbStatus: Observable<Result<(db: Connection, table: Table), DatabaseError>?> {
+        return dbLoadRelay.asObservable()
+    }
     
+    private static let sharedInstance =  SqliteDatabaseManager()
     private let dbLoadRelay = BehaviorRelay<Swift.Result<(db: Connection, table: Table), DatabaseError>?>(value: nil)
    
     private struct Constants {
@@ -46,7 +70,7 @@ class SqliteDatabaseManager: UserDatabaseManagerProtocol {
         dbLoadRelay.accept(loadTable())
     }
     
-    func checkLogin(userName: String, password: String) -> Swift.Result<Bool, DatabaseError> {
+    func checkLogin(userName: String, password: String) -> Swift.Result<(), DatabaseError> {
         
         let usersDb: (db: Connection, table: Table)
         switch dbLoadRelay.value {
@@ -68,11 +92,11 @@ class SqliteDatabaseManager: UserDatabaseManagerProtocol {
             let results = Array(rows)
             
             if results.isEmpty {
-                return .success(false)
+                return .failure(.invalidUserNamePassword)
             } else if results.count > 1 {
-                return .failure(.duplicateUser)
+                return .failure(.duplicateUser) // should not happen because username is unique. Added just for handling all cases
             } else {
-                return .success(true)
+                return .success(())
             }
         } catch  {
             return .failure(.readUserError)

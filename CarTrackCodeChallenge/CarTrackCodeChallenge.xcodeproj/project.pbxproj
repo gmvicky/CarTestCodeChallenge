@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0518E124D5FC7A000A1E5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0518E024D5FC7A000A1E5A /* LoginViewController.swift */; };
+		3D0518E324D5FC8F000A1E5A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0518E224D5FC8F000A1E5A /* LoginViewModel.swift */; };
+		3D0518E524D601BC000A1E5A /* UIButton+RxHighlighted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0518E424D601BC000A1E5A /* UIButton+RxHighlighted.swift */; };
+		3D0518EE24D603E4000A1E5A /* CountryNumberPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0518E924D603E4000A1E5A /* CountryNumberPickerViewController.swift */; };
+		3D0518EF24D603E4000A1E5A /* CountryCodePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0518EA24D603E4000A1E5A /* CountryCodePickerViewController.swift */; };
+		3D0518F924D60AE3000A1E5A /* UIButton+enabledColorBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0518F424D60AE2000A1E5A /* UIButton+enabledColorBinder.swift */; };
+		3D0518FE24D60B81000A1E5A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0518FD24D60B81000A1E5A /* AppConstants.swift */; };
+		3D05190724D60D05000A1E5A /* UITextfield+rx+twoWayBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D05190324D60D05000A1E5A /* UITextfield+rx+twoWayBind.swift */; };
 		3D0FA8CF24D55EE40023DB34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FA8CE24D55EE40023DB34 /* AppDelegate.swift */; };
 		3D0FA8D124D55EE40023DB34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FA8D024D55EE40023DB34 /* SceneDelegate.swift */; };
 		3D0FA8D324D55EE40023DB34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FA8D224D55EE40023DB34 /* ViewController.swift */; };
@@ -14,6 +22,10 @@
 		3D0FA8D824D55EE50023DB34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D0FA8D724D55EE50023DB34 /* Assets.xcassets */; };
 		3D0FA8DB24D55EE50023DB34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0FA8D924D55EE50023DB34 /* LaunchScreen.storyboard */; };
 		3D0FA8E624D55EE50023DB34 /* CarTrackCodeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FA8E524D55EE50023DB34 /* CarTrackCodeChallengeTests.swift */; };
+		3D1B66C124D5F8890040B5FE /* FloatingPlaceholderTextfieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1B66AB24D5F8880040B5FE /* FloatingPlaceholderTextfieldView.xib */; };
+		3D1B66C224D5F8890040B5FE /* FloatingPlaceholderTextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B66AC24D5F8880040B5FE /* FloatingPlaceholderTextfieldView.swift */; };
+		3D1B66C724D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B66B524D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.swift */; };
+		3D1B66C824D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1B66B624D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.xib */; };
 		3D84FE9024D5CB520088C33B /* DefaultUsers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D84FE8F24D5CB520088C33B /* DefaultUsers.plist */; };
 		3DA9525024D560DA000172B3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9524F24D560DA000172B3 /* R.generated.swift */; };
 		3DA9529824D58463000172B3 /* TableViewCellResponderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9528024D58462000172B3 /* TableViewCellResponderWrapper.swift */; };
@@ -74,6 +86,14 @@
 
 /* Begin PBXFileReference section */
 		0A8123FA101DB089B1DC035B /* Pods-CarTrackCodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTrackCodeChallenge.debug.xcconfig"; path = "Target Support Files/Pods-CarTrackCodeChallenge/Pods-CarTrackCodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		3D0518E024D5FC7A000A1E5A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3D0518E224D5FC8F000A1E5A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3D0518E424D601BC000A1E5A /* UIButton+RxHighlighted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+RxHighlighted.swift"; sourceTree = "<group>"; };
+		3D0518E924D603E4000A1E5A /* CountryNumberPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryNumberPickerViewController.swift; sourceTree = "<group>"; };
+		3D0518EA24D603E4000A1E5A /* CountryCodePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodePickerViewController.swift; sourceTree = "<group>"; };
+		3D0518F424D60AE2000A1E5A /* UIButton+enabledColorBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+enabledColorBinder.swift"; sourceTree = "<group>"; };
+		3D0518FD24D60B81000A1E5A /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		3D05190324D60D05000A1E5A /* UITextfield+rx+twoWayBind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextfield+rx+twoWayBind.swift"; sourceTree = "<group>"; };
 		3D0FA8CB24D55EE40023DB34 /* CarTrackCodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarTrackCodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0FA8CE24D55EE40023DB34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D0FA8D024D55EE40023DB34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +105,10 @@
 		3D0FA8E124D55EE50023DB34 /* CarTrackCodeChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarTrackCodeChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0FA8E524D55EE50023DB34 /* CarTrackCodeChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTrackCodeChallengeTests.swift; sourceTree = "<group>"; };
 		3D0FA8E724D55EE50023DB34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D1B66AB24D5F8880040B5FE /* FloatingPlaceholderTextfieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingPlaceholderTextfieldView.xib; sourceTree = "<group>"; };
+		3D1B66AC24D5F8880040B5FE /* FloatingPlaceholderTextfieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPlaceholderTextfieldView.swift; sourceTree = "<group>"; };
+		3D1B66B524D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPasswordPlaceholderTextView.swift; sourceTree = "<group>"; };
+		3D1B66B624D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingPasswordPlaceholderTextView.xib; sourceTree = "<group>"; };
 		3D84FE8F24D5CB520088C33B /* DefaultUsers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultUsers.plist; sourceTree = "<group>"; };
 		3DA9524F24D560DA000172B3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3DA9528024D58462000172B3 /* TableViewCellResponderWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellResponderWrapper.swift; sourceTree = "<group>"; };
@@ -153,6 +177,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D0518DF24D5FC6B000A1E5A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3D0518E024D5FC7A000A1E5A /* LoginViewController.swift */,
+				3D0518E224D5FC8F000A1E5A /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3D0518E624D603E4000A1E5A /* MobileCountryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3D0518E924D603E4000A1E5A /* CountryNumberPickerViewController.swift */,
+				3D0518EA24D603E4000A1E5A /* CountryCodePickerViewController.swift */,
+			);
+			path = MobileCountryPicker;
+			sourceTree = "<group>";
+		};
+		3D0518F124D60AE2000A1E5A /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				3D0518E424D601BC000A1E5A /* UIButton+RxHighlighted.swift */,
+				3D0518F424D60AE2000A1E5A /* UIButton+enabledColorBinder.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		3D0518FC24D60B75000A1E5A /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				3D0518FD24D60B81000A1E5A /* AppConstants.swift */,
+			);
+			path = AppConstants;
+			sourceTree = "<group>";
+		};
+		3D0518FF24D60D05000A1E5A /* Textfield */ = {
+			isa = PBXGroup;
+			children = (
+				3D05190324D60D05000A1E5A /* UITextfield+rx+twoWayBind.swift */,
+			);
+			path = Textfield;
+			sourceTree = "<group>";
+		};
 		3D0FA8C224D55EE40023DB34 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +265,33 @@
 				3D0FA8E724D55EE50023DB34 /* Info.plist */,
 			);
 			path = CarTrackCodeChallengeTests;
+			sourceTree = "<group>";
+		};
+		3D1B66A324D5F8880040B5FE /* Textfield */ = {
+			isa = PBXGroup;
+			children = (
+				3D1B66AA24D5F8880040B5FE /* FloatingPlaceholderTextfieldView */,
+			);
+			path = Textfield;
+			sourceTree = "<group>";
+		};
+		3D1B66AA24D5F8880040B5FE /* FloatingPlaceholderTextfieldView */ = {
+			isa = PBXGroup;
+			children = (
+				3D1B66AB24D5F8880040B5FE /* FloatingPlaceholderTextfieldView.xib */,
+				3D1B66AC24D5F8880040B5FE /* FloatingPlaceholderTextfieldView.swift */,
+				3D1B66B424D5F8890040B5FE /* FloatingPasswordPlaceholderTextView */,
+			);
+			path = FloatingPlaceholderTextfieldView;
+			sourceTree = "<group>";
+		};
+		3D1B66B424D5F8890040B5FE /* FloatingPasswordPlaceholderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				3D1B66B524D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.swift */,
+				3D1B66B624D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.xib */,
+			);
+			path = FloatingPasswordPlaceholderTextView;
 			sourceTree = "<group>";
 		};
 		3D84FE8E24D5CB340088C33B /* Resources */ = {
@@ -292,6 +386,8 @@
 		3DA952AA24D58472000172B3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3D0518FF24D60D05000A1E5A /* Textfield */,
+				3D0518F124D60AE2000A1E5A /* Buttons */,
 				3DA953F524D58757000172B3 /* UIImage */,
 				3DA952B124D58472000172B3 /* Strings */,
 				3DA952D024D58472000172B3 /* UIViews */,
@@ -337,6 +433,7 @@
 		3DA9530124D585DF000172B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D1B66A324D5F8880040B5FE /* Textfield */,
 				3DA9531324D585DF000172B3 /* Customs */,
 			);
 			path = Views;
@@ -345,6 +442,7 @@
 		3DA9531324D585DF000172B3 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				3D0518E624D603E4000A1E5A /* MobileCountryPicker */,
 				3DA953FA24D587D0000172B3 /* GradientView */,
 				3DA9531E24D585DF000172B3 /* BottomFadingPopupView */,
 			);
@@ -411,6 +509,7 @@
 		3DA9540624D5881E000172B3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3D0518FC24D60B75000A1E5A /* AppConstants */,
 				3DA9540B24D58E8C000172B3 /* Manager */,
 				3DA9540824D58837000172B3 /* ViewControllers */,
 				3DA9540724D58823000172B3 /* Scenes */,
@@ -429,6 +528,7 @@
 		3DA9540824D58837000172B3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3D0518DF24D5FC6B000A1E5A /* Login */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -542,6 +642,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1B66C124D5F8890040B5FE /* FloatingPlaceholderTextfieldView.xib in Resources */,
+				3D1B66C824D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.xib in Resources */,
 				3D0FA8DB24D55EE50023DB34 /* LaunchScreen.storyboard in Resources */,
 				3D0FA8D824D55EE50023DB34 /* Assets.xcassets in Resources */,
 				3D84FE9024D5CB520088C33B /* DefaultUsers.plist in Resources */,
@@ -625,11 +727,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0518E524D601BC000A1E5A /* UIButton+RxHighlighted.swift in Sources */,
 				3DA9529A24D58463000172B3 /* ResponderViewProtocol.swift in Sources */,
 				3DA953F824D58757000172B3 /* UIImage+systemName.swift in Sources */,
 				3DA9529D24D58463000172B3 /* InputObject.swift in Sources */,
 				3DA952E224D58473000172B3 /* String+Alphanumerics.swift in Sources */,
 				3DA952A124D58463000172B3 /* Animator.swift in Sources */,
+				3D0518EE24D603E4000A1E5A /* CountryNumberPickerViewController.swift in Sources */,
 				3DA952FF24D58473000172B3 /* UIResponder+.swift in Sources */,
 				3DA952A624D58463000172B3 /* PushTransition.swift in Sources */,
 				3DA953FF24D587D0000172B3 /* UIColor+Gradient.swift in Sources */,
@@ -637,12 +741,15 @@
 				3DA952F924D58473000172B3 /* Spinner.swift in Sources */,
 				3DA953F924D58757000172B3 /* UIImage+.swift in Sources */,
 				3DA952A324D58463000172B3 /* Router.swift in Sources */,
+				3D0518FE24D60B81000A1E5A /* AppConstants.swift in Sources */,
 				3D0FA8D324D55EE40023DB34 /* ViewController.swift in Sources */,
 				3DA952FC24D58473000172B3 /* UIView+fade.swift in Sources */,
+				3D0518E124D5FC7A000A1E5A /* LoginViewController.swift in Sources */,
 				3DA9540024D587D0000172B3 /* RadialGradientView.swift in Sources */,
 				3DA952E424D58473000172B3 /* String+Phone.swift in Sources */,
 				3DA9540124D587D0000172B3 /* RadialGradientNavigationBar.swift in Sources */,
 				3DA952A224D58463000172B3 /* ModuleVC.swift in Sources */,
+				3D05190724D60D05000A1E5A /* UITextfield+rx+twoWayBind.swift in Sources */,
 				3DA952A924D58463000172B3 /* SceneVC.swift in Sources */,
 				3DA9529C24D58463000172B3 /* InputError.swift in Sources */,
 				3DA952A524D58463000172B3 /* Transition.swift in Sources */,
@@ -654,12 +761,17 @@
 				3DA9540324D587EE000172B3 /* KeyboardVisibileAdjusterProtocol.swift in Sources */,
 				3DA952E024D58473000172B3 /* String+attributedBulletedText.swift in Sources */,
 				3DA9538024D585E1000172B3 /* BottomFadingPopupViewModel.swift in Sources */,
+				3D1B66C224D5F8890040B5FE /* FloatingPlaceholderTextfieldView.swift in Sources */,
 				3DA952F824D58473000172B3 /* UIView+.swift in Sources */,
+				3D0518EF24D603E4000A1E5A /* CountryCodePickerViewController.swift in Sources */,
+				3D0518F924D60AE3000A1E5A /* UIButton+enabledColorBinder.swift in Sources */,
+				3D1B66C724D5F8890040B5FE /* FloatingPasswordPlaceholderTextView.swift in Sources */,
 				3DA952A724D58463000172B3 /* BaseViewController.swift in Sources */,
 				3DA952E124D58473000172B3 /* String+Utilities.swift in Sources */,
 				3DA953EE24D58675000172B3 /* EmptyViewType.swift in Sources */,
 				3DA9540A24D58845000172B3 /* MainScene.swift in Sources */,
 				3D0FA8CF24D55EE40023DB34 /* AppDelegate.swift in Sources */,
+				3D0518E324D5FC8F000A1E5A /* LoginViewModel.swift in Sources */,
 				3DA952FB24D58473000172B3 /* UIView+Rx.swift in Sources */,
 				3DA952FA24D58473000172B3 /* UIViewExtension.swift in Sources */,
 				3DA952E324D58473000172B3 /* String+Substring.swift in Sources */,

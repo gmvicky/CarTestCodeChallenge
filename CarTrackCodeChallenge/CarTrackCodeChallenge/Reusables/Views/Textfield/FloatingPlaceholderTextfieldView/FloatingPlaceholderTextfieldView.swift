@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Combine
 
 open class FloatingPlaceholderTextfieldView: UIView, ViewCoderLoadable {
     
@@ -15,7 +14,6 @@ open class FloatingPlaceholderTextfieldView: UIView, ViewCoderLoadable {
     @IBOutlet public weak var constraintPlaceholderMode: NSLayoutConstraint!
     @IBOutlet public weak var textfield: UITextField!
     @IBOutlet public weak var titleLabel: UILabel!
-    private let cancelBag = CancellableBag()
     
     lazy var textFieldDidEndEditingClosure: ((UITextField) -> ()) = {
         return { [weak self] textField in
@@ -34,9 +32,10 @@ open class FloatingPlaceholderTextfieldView: UIView, ViewCoderLoadable {
     override open func awakeFromNib() {
         super.awakeFromNib()
         setUpLoadableView()
+        setupObservers()
     }
     
-    public func setText(_ text: String?) {
+    func setText(_ text: String?) {
         textfield.text = text
         if text?.isEmpty ?? true {
             placeHolderMode()
@@ -45,7 +44,7 @@ open class FloatingPlaceholderTextfieldView: UIView, ViewCoderLoadable {
         }
     }
     
-    public func placeHolderMode() {
+    func placeHolderMode() {
         UIView.animate(withDuration: 0.3) {
             self.constraintFloatingMode.priority = .defaultLow
             self.constraintPlaceholderMode.priority = .defaultHigh
@@ -54,7 +53,7 @@ open class FloatingPlaceholderTextfieldView: UIView, ViewCoderLoadable {
         }
     }
     
-    public func floatingMode() {
+    func floatingMode() {
         
         UIView.animate(withDuration: 0.3) {
             self.constraintPlaceholderMode.priority = .defaultLow
@@ -64,26 +63,31 @@ open class FloatingPlaceholderTextfieldView: UIView, ViewCoderLoadable {
         }
     }
     
-    public func observeFloating() {
-        NotificationCenter.default
-              .publisher(for: UITextField.textDidBeginEditingNotification, object: textfield)
-              .sink(receiveValue: { [weak self] notif in
-                if notif.object as? UITextField == self?.textfield {
-                    self?.floatingMode()
-                }
-                  
-              })
-              .add(to: cancelBag)
-          
-          NotificationCenter.default
-              .publisher(for: UITextField.textDidEndEditingNotification, object: textfield)
-              .sink(receiveValue: { [weak self] in
-                if let aTxtfield = ($0.object as? UITextField),
-                    aTxtfield == self?.textfield,
-                    aTxtfield.text?.isEmpty ?? true {
-                      self?.placeHolderMode()
-                  }
-              })
-              .add(to: cancelBag)
+     func setupObservers() {
+           
+       textfield.rx.controlEvent([.editingDidBegin])
+           .mapTo(())
+           .asObservable()
+           .subscribe(onNext: activateState)
+           .disposed(by: rx.disposeBag)
+       
+       textfield.rx.controlEvent([.editingDidEnd])
+       .mapTo(())
+       .asObservable()
+       .subscribe(onNext: deactivateState)
+       .disposed(by: rx.disposeBag)
+   }
+    
+    func activateState() {
+        floatingMode()
+        titleLabel.textColor = .black
+    }
+    
+    func deactivateState() {
+        
+        if textfield.text?.isEmpty ?? true {
+            placeHolderMode()
+        }
+        titleLabel.textColor = .lightGray
     }
 }
