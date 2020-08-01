@@ -10,14 +10,100 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CarTrackCodeChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="CarTrackCodeChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVu-2A-PCq">
-                                <rect key="frame" x="35" y="384" width="344" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVu-2A-PCq">
+                                <rect key="frame" x="35" y="293.5" width="344" height="309"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMD-cD-ABN" customClass="FloatingPlaceholderTextfieldView" customModule="CarTrackCodeChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="324" height="70"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="FuJ-YN-ddt"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5h-Ma-jZ5" customClass="FloatingPasswordPlaceholderTextView" customModule="CarTrackCodeChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="80" width="324" height="70"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Nlc-3n-FWi"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUT-fq-9Qw">
+                                        <rect key="frame" x="10" y="180" width="324" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-fY-6Nc">
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="44"/>
+                                                <state key="normal" title="Select Country">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2E7-hj-PhA">
+                                                <rect key="frame" x="280" y="5.5" width="34" height="33"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2E7-hj-PhA" secondAttribute="height" id="o7l-4c-GPn"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dcr-fY-6Nc" secondAttribute="bottom" id="Jio-8g-hmG"/>
+                                            <constraint firstAttribute="bottom" secondItem="2E7-hj-PhA" secondAttribute="bottom" constant="5" id="Jv0-CP-hz2"/>
+                                            <constraint firstItem="dcr-fY-6Nc" firstAttribute="leading" secondItem="JUT-fq-9Qw" secondAttribute="leading" id="UcH-9z-IXQ"/>
+                                            <constraint firstAttribute="height" constant="44" id="fYa-p9-TyY"/>
+                                            <constraint firstItem="dcr-fY-6Nc" firstAttribute="top" secondItem="JUT-fq-9Qw" secondAttribute="top" id="h4N-ba-6Kb"/>
+                                            <constraint firstItem="2E7-hj-PhA" firstAttribute="top" secondItem="JUT-fq-9Qw" secondAttribute="top" constant="5" id="kwX-Z6-iDN"/>
+                                            <constraint firstAttribute="trailing" secondItem="dcr-fY-6Nc" secondAttribute="trailing" id="noR-p8-QPU"/>
+                                            <constraint firstAttribute="trailing" secondItem="2E7-hj-PhA" secondAttribute="trailing" constant="10" id="qCX-Vv-FIx"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ls5-oe-JIt">
+                                        <rect key="frame" x="35" y="244" width="274" height="45"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Ky0-Tv-L0p"/>
+                                        </constraints>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="JUT-fq-9Qw" firstAttribute="leading" secondItem="NVu-2A-PCq" secondAttribute="leading" constant="10" id="1NB-mB-keo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y5h-Ma-jZ5" secondAttribute="trailing" constant="10" id="21S-9u-Dg6"/>
+                                    <constraint firstItem="ls5-oe-JIt" firstAttribute="top" secondItem="JUT-fq-9Qw" secondAttribute="bottom" constant="20" id="2FQ-Vx-qVt"/>
+                                    <constraint firstItem="OMD-cD-ABN" firstAttribute="leading" secondItem="NVu-2A-PCq" secondAttribute="leading" constant="10" id="5Fs-ft-sjz"/>
+                                    <constraint firstItem="OMD-cD-ABN" firstAttribute="top" secondItem="NVu-2A-PCq" secondAttribute="top" id="AY3-Lu-kzF"/>
+                                    <constraint firstAttribute="bottom" secondItem="ls5-oe-JIt" secondAttribute="bottom" constant="20" id="Uo3-uG-SS5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ls5-oe-JIt" secondAttribute="trailing" constant="35" id="VRu-Zu-d5F"/>
+                                    <constraint firstItem="Y5h-Ma-jZ5" firstAttribute="leading" secondItem="NVu-2A-PCq" secondAttribute="leading" constant="10" id="VU9-hN-jcc"/>
+                                    <constraint firstItem="JUT-fq-9Qw" firstAttribute="top" secondItem="Y5h-Ma-jZ5" secondAttribute="bottom" constant="30" id="gzp-Kq-Hoj"/>
+                                    <constraint firstItem="ls5-oe-JIt" firstAttribute="leading" secondItem="NVu-2A-PCq" secondAttribute="leading" constant="35" id="h33-pV-XsZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="JUT-fq-9Qw" secondAttribute="trailing" constant="10" id="k0r-fv-1xx"/>
+                                    <constraint firstItem="Y5h-Ma-jZ5" firstAttribute="top" secondItem="OMD-cD-ABN" secondAttribute="bottom" constant="10" id="ozb-KA-Nw0"/>
+                                    <constraint firstAttribute="trailing" secondItem="OMD-cD-ABN" secondAttribute="trailing" constant="10" id="yf1-sX-5jG"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
@@ -40,17 +126,25 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="iVs-hd-Z32"/>
+                    <connections>
+                        <outlet property="constraintCenterY" destination="y1h-00-pa3" id="vau-r6-ss8"/>
+                        <outlet property="loginButton" destination="ls5-oe-JIt" id="hzQ-nj-uX7"/>
+                        <outlet property="passwordTextfield" destination="Y5h-Ma-jZ5" id="ZIc-tW-GeX"/>
+                        <outlet property="selectCountryArrowImageView" destination="2E7-hj-PhA" id="kxB-if-h4q"/>
+                        <outlet property="selectCountryButton" destination="dcr-fY-6Nc" id="vIY-qB-GCR"/>
+                        <outlet property="userNameTextfield" destination="OMD-cD-ABN" id="EwJ-JK-Nx2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="138"/>
+            <point key="canvasLocation" x="113.04347826086958" y="137.94642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hQL-pL-m03">
             <objects>
                 <navigationController id="Wjf-rd-Ar6" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="icN-XA-W0y">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="icN-XA-W0y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -62,4 +156,7 @@
             <point key="canvasLocation" x="-628" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.right.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

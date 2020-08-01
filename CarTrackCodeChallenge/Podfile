@@ -11,7 +11,7 @@ target 'CarTrackCodeChallenge' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'SQLite.swift', '~> 0.12.0'
 #  pod 'ADCountryPicker', '~> 2.1.0'
- # pod 'PhoneNumberKit', '~> 3.0'
+  pod 'PhoneNumberKit', '~> 3.0'
  # pod 'KeychainAccess'
  # pod 'SwiftOTP'
  # pod 'SwiftyJSON'

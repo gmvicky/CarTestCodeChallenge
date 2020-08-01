@@ -128,6 +128,39 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 3 images.
+  struct image {
+    /// Image `backArrow`.
+    static let backArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "backArrow")
+    /// Image `passwordHide`.
+    static let passwordHide = Rswift.ImageResource(bundle: R.hostingBundle, name: "passwordHide")
+    /// Image `passwordShow`.
+    static let passwordShow = Rswift.ImageResource(bundle: R.hostingBundle, name: "passwordShow")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "backArrow", bundle: ..., traitCollection: ...)`
+    static func backArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.backArrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "passwordHide", bundle: ..., traitCollection: ...)`
+    static func passwordHide(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.passwordHide, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "passwordShow", bundle: ..., traitCollection: ...)`
+    static func passwordShow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.passwordShow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -159,10 +192,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `BottomFadingPopupView`.
     static let bottomFadingPopupView = _R.nib._BottomFadingPopupView()
+    /// Nib `FloatingPasswordPlaceholderTextView`.
+    static let floatingPasswordPlaceholderTextView = _R.nib._FloatingPasswordPlaceholderTextView()
+    /// Nib `FloatingPlaceholderTextfieldView`.
+    static let floatingPlaceholderTextfieldView = _R.nib._FloatingPlaceholderTextfieldView()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "BottomFadingPopupView", in: bundle)`
@@ -172,8 +209,32 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FloatingPasswordPlaceholderTextView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.floatingPasswordPlaceholderTextView) instead")
+    static func floatingPasswordPlaceholderTextView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.floatingPasswordPlaceholderTextView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FloatingPlaceholderTextfieldView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.floatingPlaceholderTextfieldView) instead")
+    static func floatingPlaceholderTextfieldView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.floatingPlaceholderTextfieldView)
+    }
+    #endif
+
     static func bottomFadingPopupView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BottomFadingPopupView? {
       return R.nib.bottomFadingPopupView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BottomFadingPopupView
+    }
+
+    static func floatingPasswordPlaceholderTextView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.floatingPasswordPlaceholderTextView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func floatingPlaceholderTextfieldView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.floatingPlaceholderTextfieldView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -195,18 +256,54 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _FloatingPasswordPlaceholderTextView.validate()
+    }
+
     struct _BottomFadingPopupView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "BottomFadingPopupView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BottomFadingPopupView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BottomFadingPopupView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FloatingPasswordPlaceholderTextView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "FloatingPasswordPlaceholderTextView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "passwordShow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'passwordShow' is used in nib 'FloatingPasswordPlaceholderTextView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "placeHolderText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'placeHolderText' is used in storyboard 'FloatingPasswordPlaceholderTextView', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FloatingPlaceholderTextfieldView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "FloatingPlaceholderTextfieldView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -248,11 +345,18 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Main"
 
+      func loginViewController(_: Void = ()) -> LoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
+      }
+
       static func validate() throws {
+        if UIKit.UIImage(named: "chevron.right.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.right.circle.fill' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
       }
 
       fileprivate init() {}

@@ -9,13 +9,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import AlamofireImage
-
-//struct ImageSourceString {
-//    var sourceType: UIImageView.ImageSourceType
-//    var name: String?
-//}
-
 extension UIButton {
     
     func util_setImage(source: UIImageView.ImageSourceType?) {

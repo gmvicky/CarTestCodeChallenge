@@ -15,12 +15,12 @@ enum MainScene: SceneVC {
 
 
 extension MainScene {
-//    static func loadScene(rootViewController: RootViewController) {
-//        let viewModel = RootViewModel()
-//        viewModel.userManager = UserManager.shared
-//        viewModel.rootManager = RootManager.shared
-//        rootViewController.rootViewModel = viewModel
-//    }
+    static func loadScene(rootViewController: LoginViewController) {
+        let router = Router(viewController: rootViewController)
+        let viewModel = LoginViewModel(router: router, databaseManager: SqliteDatabaseManager.shared)
+        
+        rootViewController.viewModel = viewModel
+    }
     
         func router() -> RouterProtocol {
     //        guard let view = R.storyboard.root.rootViewController() else {
