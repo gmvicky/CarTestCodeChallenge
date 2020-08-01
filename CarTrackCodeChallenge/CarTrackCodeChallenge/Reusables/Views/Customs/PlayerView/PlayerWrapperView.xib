@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerWrapperView" customModule="Speshe" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="CoY-JK-OBS" id="LZh-4J-OuW"/>
+                <outlet property="containerView" destination="i0d-8S-TTh" id="Mkx-p2-Sb2"/>
+                <outlet property="playImageView" destination="VyI-Xj-R67" id="wiB-4Q-8sr"/>
+                <outlet property="previewImageView" destination="6UD-r5-hul" id="mXJ-dM-ooY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="WKM-3D-Wzq">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0d-8S-TTh" customClass="ContainerView" customModule="Speshe" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6UD-r5-hul">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livephoto.play" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VyI-Xj-R67">
+                    <rect key="frame" x="50" y="50" width="20.5" height="19.5"/>
+                    <color key="tintColor" name="black"/>
+                </imageView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="CoY-JK-OBS">
+                    <rect key="frame" x="41.5" y="41.5" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="6UD-r5-hul" firstAttribute="leading" secondItem="WKM-3D-Wzq" secondAttribute="leading" id="3V1-St-qSg"/>
+                <constraint firstItem="CoY-JK-OBS" firstAttribute="centerY" secondItem="WKM-3D-Wzq" secondAttribute="centerY" id="5Wg-E6-oMt"/>
+                <constraint firstItem="i0d-8S-TTh" firstAttribute="top" secondItem="WKM-3D-Wzq" secondAttribute="top" id="6vd-jY-UkT"/>
+                <constraint firstItem="VyI-Xj-R67" firstAttribute="centerY" secondItem="WKM-3D-Wzq" secondAttribute="centerY" id="P65-iV-faV"/>
+                <constraint firstItem="6UD-r5-hul" firstAttribute="top" secondItem="WKM-3D-Wzq" secondAttribute="top" id="PtR-se-SfM"/>
+                <constraint firstAttribute="trailing" secondItem="6UD-r5-hul" secondAttribute="trailing" id="RBV-oq-ziJ"/>
+                <constraint firstItem="CoY-JK-OBS" firstAttribute="centerX" secondItem="WKM-3D-Wzq" secondAttribute="centerX" id="Rla-r2-TQI"/>
+                <constraint firstItem="i0d-8S-TTh" firstAttribute="leading" secondItem="WKM-3D-Wzq" secondAttribute="leading" id="SVV-20-CwB"/>
+                <constraint firstAttribute="bottom" secondItem="6UD-r5-hul" secondAttribute="bottom" id="XpS-MQ-mXN"/>
+                <constraint firstItem="VyI-Xj-R67" firstAttribute="centerX" secondItem="WKM-3D-Wzq" secondAttribute="centerX" id="c7g-D9-dC8"/>
+                <constraint firstAttribute="bottom" secondItem="i0d-8S-TTh" secondAttribute="bottom" id="l2A-qP-8hR"/>
+                <constraint firstAttribute="trailing" secondItem="i0d-8S-TTh" secondAttribute="trailing" id="xCT-8T-20t"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="hTp-3p-d9e"/>
+            <point key="canvasLocation" x="20" y="56"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="livephoto.play" catalog="system" width="64" height="60"/>
+        <namedColor name="black">
+            <color red="0.21199999749660492" green="0.21199999749660492" blue="0.21199999749660492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

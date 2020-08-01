@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZoomableImageInScrollView" customModule="Speshe" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="sU6-hm-MXj" id="raj-eA-dkH"/>
+                <outlet property="scrollView" destination="IEr-Wd-7md" id="GEj-cY-dSz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="QHy-jr-8HO">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="IEr-Wd-7md">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sU6-hm-MXj">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="Bjy-w0-9c7">
+                                    <rect key="frame" x="191" y="393" width="32" height="32"/>
+                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Bjy-w0-9c7" firstAttribute="centerY" secondItem="sU6-hm-MXj" secondAttribute="centerY" id="HlM-uN-cQh"/>
+                                <constraint firstItem="Bjy-w0-9c7" firstAttribute="centerX" secondItem="sU6-hm-MXj" secondAttribute="centerX" id="dVq-74-aTa"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="grass"/>
+                    <constraints>
+                        <constraint firstItem="sU6-hm-MXj" firstAttribute="height" secondItem="jbJ-lc-eLX" secondAttribute="height" id="Dbz-KF-fdc"/>
+                        <constraint firstItem="sU6-hm-MXj" firstAttribute="bottom" secondItem="46f-1x-hg9" secondAttribute="bottom" id="cqh-DC-Dzn"/>
+                        <constraint firstItem="sU6-hm-MXj" firstAttribute="trailing" secondItem="46f-1x-hg9" secondAttribute="trailing" id="kYJ-fu-PjP"/>
+                        <constraint firstItem="sU6-hm-MXj" firstAttribute="top" secondItem="46f-1x-hg9" secondAttribute="top" id="lXo-4Z-77p"/>
+                        <constraint firstItem="sU6-hm-MXj" firstAttribute="width" secondItem="jbJ-lc-eLX" secondAttribute="width" id="mfZ-Z8-fSU"/>
+                        <constraint firstItem="sU6-hm-MXj" firstAttribute="leading" secondItem="46f-1x-hg9" secondAttribute="leading" id="o3D-Qg-R7D"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="46f-1x-hg9"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="jbJ-lc-eLX"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="hwg-Fc-HRC" firstAttribute="trailing" secondItem="IEr-Wd-7md" secondAttribute="trailing" id="3cn-G8-2tu"/>
+                <constraint firstItem="IEr-Wd-7md" firstAttribute="leading" secondItem="hwg-Fc-HRC" secondAttribute="leading" id="Ocd-Au-VGk"/>
+                <constraint firstItem="hwg-Fc-HRC" firstAttribute="bottom" secondItem="IEr-Wd-7md" secondAttribute="bottom" id="uZ0-Ub-5kZ"/>
+                <constraint firstItem="IEr-Wd-7md" firstAttribute="top" secondItem="hwg-Fc-HRC" secondAttribute="top" id="xcH-b8-wNL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="hwg-Fc-HRC"/>
+            <point key="canvasLocation" x="139" y="88"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="card" width="16" height="16"/>
+        <namedColor name="grass">
+            <color red="0.22400000691413879" green="0.65499997138977051" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
