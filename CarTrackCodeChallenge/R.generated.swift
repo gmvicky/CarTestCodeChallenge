@@ -114,6 +114,20 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `DefaultUsers.plist`.
+    static let defaultUsersPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "DefaultUsers", pathExtension: "plist")
+
+    /// `bundle.url(forResource: "DefaultUsers", withExtension: "plist")`
+    static func defaultUsersPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.defaultUsersPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
