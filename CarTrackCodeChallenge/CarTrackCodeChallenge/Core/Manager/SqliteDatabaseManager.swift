@@ -49,7 +49,7 @@ class SqliteDatabaseManager: UserDatabaseManagerProtocol {
     
     static var shared: UserDatabaseManagerProtocol { return sharedInstance }
     
-    var dbStatus: Observable<Result<(db: Connection, table: Table), DatabaseError>?> {
+    var dbStatus: Observable<Swift.Result<(db: Connection, table: Table), DatabaseError>?> {
         return dbLoadRelay.asObservable()
     }
     
