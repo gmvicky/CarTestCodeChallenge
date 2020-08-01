@@ -36,6 +36,11 @@ class LoginViewController: BaseViewController<LoginViewModel> {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
     override func configureViews() {
         userNameTextfield.titleLabel.text = Constants.userNamePlaceholder
         passwordTextfield.titleLabel.text = Constants.passwordPlaceholder
