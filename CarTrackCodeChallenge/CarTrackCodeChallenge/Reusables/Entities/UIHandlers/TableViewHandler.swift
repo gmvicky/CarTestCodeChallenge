@@ -50,36 +50,6 @@ extension TableViewHandlerDelegate {
     }
 }
 
-class TableViewHandler: NSObject {
-    
-    weak var delegate: TableViewHandlerDelegate?
-    var cellHeights: [IndexPath : CGFloat] = [:]
-    
-    init(tableView: UITableView) {
-        super.init()
-        tableView.delegate = self
-    }
-    
-    
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cellHeights[indexPath] = cell.frame.size.height
-    }
-    
-
-}
-
-extension TableViewHandler: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeights[indexPath] ?? 200.0
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  delegate?.tableView(tableView, heightForRowAt: indexPath) ?? UITableView.automaticDimension
-    }
-}
-
 class TableViewHandlerIdentifiableItems<T>: NSObject, UITableViewDelegate, UITableViewDataSourcePrefetching where T: AnimatableSectionModelType {
     
     
@@ -111,7 +81,7 @@ class TableViewHandlerIdentifiableItems<T>: NSObject, UITableViewDelegate, UITab
             let heightValue = identifiableCellHeights[identifiableKey] {
             return heightValue
         }
-        return indexPathCellHeights[indexPath] ?? 200.0
+        return indexPathCellHeights[indexPath] ?? UserDetailTableViewCell.preferredHeight
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -146,7 +116,7 @@ class TableViewHandlerIdentifiableItems<T>: NSObject, UITableViewDelegate, UITab
     }
 
     func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
-        guard let aDelegate = delegate else { return [] }
+//        guard let aDelegate = delegate else { return [] }
         return []
 //      let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
 //      let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)

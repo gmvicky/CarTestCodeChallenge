@@ -8,9 +8,11 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 enum MainScene: SceneVC {
     case details
+    case map(MKAnnotation)
 }
 
 
@@ -23,11 +25,35 @@ extension MainScene {
     }
     
         func router() -> RouterProtocol {
-    //        guard let view = R.storyboard.root.rootViewController() else {
-    //            fatalError(R.storyboard.root.rootViewController.identifier + " not found")
-    //        }
-    //        Root.loadScene(rootViewController: view)
-    //        return view
-            return Router(viewController: nil)
+            switch self {
+            case .details:
+                return detailViewController()
+            case .map(let location):
+                return mapViewController(location: location)
+            }
         }
+    
+    // MARK: - Private
+    
+    private func detailViewController() -> RouterProtocol {
+        guard let view = R.storyboard.main.detailViewController() else {
+            fatalError(R.storyboard.main.detailViewController.identifier + " not found")
+        }
+        
+        let router = Router(viewController: view)
+        let viewMoel = DetailViewModel(router: router)
+        view.viewModel = viewMoel
+        return router
+    }
+    
+    private func mapViewController(location: MKAnnotation) -> RouterProtocol {
+        guard let view = R.storyboard.main.mapViewController() else {
+            fatalError(R.storyboard.main.mapViewController.identifier + " not found")
+        }
+        
+        let router = Router(viewController: view)
+        let viewMoel = MapViewModel(router: router, location: location)
+        view.viewModel = viewMoel
+        return router
+    }
 }

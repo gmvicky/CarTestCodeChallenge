@@ -1,0 +1,6 @@
+framework module Pods_CarTrackCodeChallengeTests {
+  umbrella header "Pods-CarTrackCodeChallengeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

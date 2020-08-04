@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,6 +72,17 @@
                                             <constraint firstAttribute="trailing" secondItem="dcr-fY-6Nc" secondAttribute="trailing" id="noR-p8-QPU"/>
                                             <constraint firstAttribute="trailing" secondItem="2E7-hj-PhA" secondAttribute="trailing" constant="10" id="qCX-Vv-FIx"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="placeholderText"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ls5-oe-JIt">
                                         <rect key="frame" x="35" y="244" width="274" height="45"/>
@@ -84,6 +96,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="22.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="placeholderText"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
@@ -112,7 +127,7 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" name="placeholderText"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -139,6 +154,93 @@
             </objects>
             <point key="canvasLocation" x="113.04347826086958" y="137.94642857142856"/>
         </scene>
+        <!--Detail-->
+        <scene sceneID="cXE-jY-agb">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="T1d-iG-AfT" customClass="DetailViewController" customModule="CarTrackCodeChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DYg-OU-Q0d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FTk-HW-rhO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nks-66-IHF" firstAttribute="trailing" secondItem="FTk-HW-rhO" secondAttribute="trailing" id="YOx-w5-7z6"/>
+                            <constraint firstItem="FTk-HW-rhO" firstAttribute="top" secondItem="nks-66-IHF" secondAttribute="top" id="ZJp-Rg-dsG"/>
+                            <constraint firstItem="FTk-HW-rhO" firstAttribute="leading" secondItem="nks-66-IHF" secondAttribute="leading" id="tbh-m2-DNa"/>
+                            <constraint firstItem="nks-66-IHF" firstAttribute="bottom" secondItem="FTk-HW-rhO" secondAttribute="bottom" id="yry-EV-iTn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nks-66-IHF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="g07-AD-65X"/>
+                    <connections>
+                        <outlet property="tableView" destination="FTk-HW-rhO" id="H0S-ck-8CQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LkV-t4-ZWy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="137"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="pdI-yu-8Kl">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="opH-r7-OVC" customClass="MapViewController" customModule="CarTrackCodeChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Caw-sO-fm4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2a-hW-fd0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-xA-cB9" customClass="VisualEffectBackgroundButtonView" customModule="CarTrackCodeChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ji-Bj-Odm" customClass="MKMapView">
+                                        <rect key="frame" x="30" y="202.5" width="354" height="491"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cfm-xA-cB9" firstAttribute="leading" secondItem="z2a-hW-fd0" secondAttribute="leading" id="1jq-Vj-O8E"/>
+                                    <constraint firstAttribute="trailing" secondItem="cfm-xA-cB9" secondAttribute="trailing" id="4e2-HI-lRq"/>
+                                    <constraint firstAttribute="bottom" secondItem="cfm-xA-cB9" secondAttribute="bottom" id="F2G-hN-9Qo"/>
+                                    <constraint firstItem="1Ji-Bj-Odm" firstAttribute="centerY" secondItem="z2a-hW-fd0" secondAttribute="centerY" id="LV4-8F-yjJ"/>
+                                    <constraint firstItem="cfm-xA-cB9" firstAttribute="top" secondItem="z2a-hW-fd0" secondAttribute="top" id="Qj3-Xt-VXu"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Ji-Bj-Odm" secondAttribute="trailing" constant="30" id="VfG-nM-GaW"/>
+                                    <constraint firstItem="1Ji-Bj-Odm" firstAttribute="leading" secondItem="z2a-hW-fd0" secondAttribute="leading" constant="30" id="pEx-zL-XF5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nRu-nJ-Ao2" firstAttribute="trailing" secondItem="z2a-hW-fd0" secondAttribute="trailing" id="85B-G6-6dc"/>
+                            <constraint firstItem="z2a-hW-fd0" firstAttribute="leading" secondItem="nRu-nJ-Ao2" secondAttribute="leading" id="A8I-Wm-xhL"/>
+                            <constraint firstItem="1Ji-Bj-Odm" firstAttribute="height" secondItem="nRu-nJ-Ao2" secondAttribute="height" multiplier="0.6" id="AEH-ig-2f4"/>
+                            <constraint firstItem="z2a-hW-fd0" firstAttribute="top" secondItem="Caw-sO-fm4" secondAttribute="top" id="j6i-u2-HDa"/>
+                            <constraint firstAttribute="bottom" secondItem="z2a-hW-fd0" secondAttribute="bottom" id="kEp-6C-fVj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nRu-nJ-Ao2"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="1Ji-Bj-Odm" id="alr-UI-5qL"/>
+                        <outlet property="visualEffectBackground" destination="cfm-xA-cB9" id="Noe-Pn-eeM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bI9-3x-fge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1523.1884057971015" y="136.60714285714286"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hQL-pL-m03">
             <objects>
@@ -146,6 +248,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="icN-XA-W0y">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yQ1-Tz-ncp"/>
@@ -158,5 +261,8 @@
     </scenes>
     <resources>
         <image name="chevron.right.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="placeholderText">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

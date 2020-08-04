@@ -80,7 +80,7 @@ open class FloatingPlaceholderTextfieldView: UIView, ViewCoderLoadable {
     
     func activateState() {
         floatingMode()
-        titleLabel.textColor = .black
+        titleLabel.textColor = .label
     }
     
     func deactivateState() {
