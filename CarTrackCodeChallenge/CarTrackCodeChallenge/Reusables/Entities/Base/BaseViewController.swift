@@ -169,16 +169,11 @@ class BaseViewController<T>: UIViewController where T: BaseViewModelProtocol {
             shouldHideNavigationBarShadow(shouldShowBarShadow: shouldShowBarShadow)
         }
         
-        func setupNavigationItemLeftBarButtonImage(_ image: UIImage? = UIImage.systemImageFromConstant(name: .chevronLeft)) {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action:  #selector(leftBarButtonTapped(_:)))
+    func setupNavigationItemLeftBarButtonImage(_ image: UIImage? = R.image.backArrow()) {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image?.withRenderingMode(.alwaysOriginal).withTintColor(.white), style: .plain, target: self, action:  #selector(leftBarButtonTapped(_:)))
             
         }
-    //
-    //    func setupNavigationTitleView(_ view: UIView? = R.nib.esseCustomNavigationTitleView(owner:  nil)) {
-    //        guard let aView = view else { return }
-    //        navigationItem.titleView = aView
-    //    }
-        
+    
         @objc func leftBarButtonTapped(_ sender: UIBarButtonItem)
         {
             if shouldPopToRoot {

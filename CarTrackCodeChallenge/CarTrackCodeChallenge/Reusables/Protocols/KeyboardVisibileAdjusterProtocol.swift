@@ -85,11 +85,14 @@ struct KeyboardVisibileAdjustCenterConstraint: KeyboardVisibleAdjusterProtocol {
     
     func updateComponent(_ keyboardHeight: CGFloat, keyboardFocusRect: CGRect?) {
         let modifiedValue = keyboardHeight == .zero ? defaultValue : customMultiplier
-        UIView.animate(withDuration: 0.3, animations: {
-            self.centerConstraint?.constant = modifiedValue
-            self.superView?.layoutIfNeeded()
-            self.superView?.setNeedsLayout()
-            
-        })
+        
+        if centerConstraint?.constant != modifiedValue {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.centerConstraint?.constant = modifiedValue
+                self.superView?.layoutIfNeeded()
+                self.superView?.setNeedsLayout()
+
+            })
+        }
     }
 }

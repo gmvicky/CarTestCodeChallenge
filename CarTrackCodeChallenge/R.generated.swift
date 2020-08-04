@@ -114,6 +114,23 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.color` struct is generated, and contains static references to 1 colors.
+  struct color {
+    /// Color `placeholderText`.
+    static let placeholderText = Rswift.ColorResource(bundle: R.hostingBundle, name: "placeholderText")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "placeholderText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func placeholderText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.placeholderText, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `DefaultUsers.plist`.
@@ -192,7 +209,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `BottomFadingPopupView`.
     static let bottomFadingPopupView = _R.nib._BottomFadingPopupView()
@@ -200,6 +217,10 @@ struct R: Rswift.Validatable {
     static let floatingPasswordPlaceholderTextView = _R.nib._FloatingPasswordPlaceholderTextView()
     /// Nib `FloatingPlaceholderTextfieldView`.
     static let floatingPlaceholderTextfieldView = _R.nib._FloatingPlaceholderTextfieldView()
+    /// Nib `UserDetailTableViewCell`.
+    static let userDetailTableViewCell = _R.nib._UserDetailTableViewCell()
+    /// Nib `VisualEffectBackgroundButtonView`.
+    static let visualEffectBackgroundButtonView = _R.nib._VisualEffectBackgroundButtonView()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "BottomFadingPopupView", in: bundle)`
@@ -225,6 +246,22 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "UserDetailTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.userDetailTableViewCell) instead")
+    static func userDetailTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.userDetailTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "VisualEffectBackgroundButtonView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.visualEffectBackgroundButtonView) instead")
+    static func visualEffectBackgroundButtonView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.visualEffectBackgroundButtonView)
+    }
+    #endif
+
     static func bottomFadingPopupView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BottomFadingPopupView? {
       return R.nib.bottomFadingPopupView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BottomFadingPopupView
     }
@@ -236,6 +273,22 @@ struct R: Rswift.Validatable {
     static func floatingPlaceholderTextfieldView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.floatingPlaceholderTextfieldView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
+
+    static func userDetailTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UserDetailTableViewCell? {
+      return R.nib.userDetailTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UserDetailTableViewCell
+    }
+
+    static func visualEffectBackgroundButtonView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.visualEffectBackgroundButtonView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `UserDetailTableViewCell`.
+    static let userDetailTableViewCell: Rswift.ReuseIdentifier<UserDetailTableViewCell> = Rswift.ReuseIdentifier(identifier: "UserDetailTableViewCell")
 
     fileprivate init() {}
   }
@@ -267,6 +320,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _FloatingPasswordPlaceholderTextView.validate()
+      try _UserDetailTableViewCell.validate()
     }
 
     struct _BottomFadingPopupView: Rswift.NibResourceType {
@@ -292,6 +346,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "passwordShow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'passwordShow' is used in nib 'FloatingPasswordPlaceholderTextView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "placeHolderText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'placeHolderText' is used in storyboard 'FloatingPasswordPlaceholderTextView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "placeholderText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'placeholderText' is used in storyboard 'FloatingPasswordPlaceholderTextView', but couldn't be loaded.") }
         }
       }
 
@@ -301,6 +356,37 @@ struct _R: Rswift.Validatable {
     struct _FloatingPlaceholderTextfieldView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "FloatingPlaceholderTextfieldView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _UserDetailTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = UserDetailTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "UserDetailTableViewCell"
+      let name = "UserDetailTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UserDetailTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UserDetailTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "location", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'location' is used in nib 'UserDetailTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _VisualEffectBackgroundButtonView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "VisualEffectBackgroundButtonView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -345,18 +431,31 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let detailViewController = StoryboardViewControllerResource<DetailViewController>(identifier: "DetailViewController")
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
+      let mapViewController = StoryboardViewControllerResource<MapViewController>(identifier: "MapViewController")
       let name = "Main"
+
+      func detailViewController(_: Void = ()) -> DetailViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: detailViewController)
+      }
 
       func loginViewController(_: Void = ()) -> LoginViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
       }
 
+      func mapViewController(_: Void = ()) -> MapViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mapViewController)
+      }
+
       static func validate() throws {
         if UIKit.UIImage(named: "chevron.right.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'chevron.right.circle.fill' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "placeholderText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'placeholderText' is used in storyboard 'Main', but couldn't be loaded.") }
         }
+        if _R.storyboard.main().detailViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'detailViewController' could not be loaded from storyboard 'Main' as 'DetailViewController'.") }
         if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
+        if _R.storyboard.main().mapViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mapViewController' could not be loaded from storyboard 'Main' as 'MapViewController'.") }
       }
 
       fileprivate init() {}

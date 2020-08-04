@@ -77,7 +77,8 @@ class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
             
             switch result {
             case .success:
-                break
+                let destination = MainScene.details.router()
+                self?.router.open(destination, transition: PushTransition())
             case .failure(let error):
                 self?.openToastMessage(error.errorDescription)
             }
