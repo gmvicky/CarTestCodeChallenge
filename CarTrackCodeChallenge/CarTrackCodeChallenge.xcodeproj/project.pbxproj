@@ -98,6 +98,9 @@
 		3DA9540524D58809000172B3 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9540424D58809000172B3 /* UIScrollView+.swift */; };
 		3DA9540A24D58845000172B3 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9540924D58845000172B3 /* MainScene.swift */; };
 		3DA9540D24D58EA4000172B3 /* SqliteDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9540C24D58EA4000172B3 /* SqliteDatabaseManager.swift */; };
+		3DAAEDDB24DB068200359FF8 /* SqliteDatabaseManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAEDDA24DB068200359FF8 /* SqliteDatabaseManagerTests.swift */; };
+		3DAAEDDD24DB0D4000359FF8 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAEDDC24DB0D4000359FF8 /* DetailViewModelTests.swift */; };
+		3DAAEDDF24DB102D00359FF8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DAAEDDE24DB102D00359FF8 /* Readme.md */; };
 		3DDCE31124D73FF2006A259A /* Address+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDCE31024D73FF2006A259A /* Address+MKAnnotation.swift */; };
 		5B8CDF3A36CB5AB83E50E995 /* Pods_CarTrackCodeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C9348F4DD8A58662E0730C /* Pods_CarTrackCodeChallenge.framework */; };
 		65CA8A6192F002BEDB3AB789 /* Pods_CarTrackCodeChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F20C64AF02822078ED66379 /* Pods_CarTrackCodeChallengeTests.framework */; };
@@ -210,6 +213,9 @@
 		3DA9540424D58809000172B3 /* UIScrollView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		3DA9540924D58845000172B3 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		3DA9540C24D58EA4000172B3 /* SqliteDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteDatabaseManager.swift; sourceTree = "<group>"; };
+		3DAAEDDA24DB068200359FF8 /* SqliteDatabaseManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteDatabaseManagerTests.swift; sourceTree = "<group>"; };
+		3DAAEDDC24DB0D4000359FF8 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		3DAAEDDE24DB102D00359FF8 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		3DDCE31024D73FF2006A259A /* Address+MKAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+MKAnnotation.swift"; sourceTree = "<group>"; };
 		7013DA158B06AFC96BFBD567 /* Pods-CarTrackCodeChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTrackCodeChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-CarTrackCodeChallengeTests/Pods-CarTrackCodeChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		76C9348F4DD8A58662E0730C /* Pods_CarTrackCodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarTrackCodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,6 +329,7 @@
 				3D0FA8D724D55EE50023DB34 /* Assets.xcassets */,
 				3D0FA8D924D55EE50023DB34 /* LaunchScreen.storyboard */,
 				3D0FA8DC24D55EE50023DB34 /* Info.plist */,
+				3DAAEDDE24DB102D00359FF8 /* Readme.md */,
 			);
 			path = CarTrackCodeChallenge;
 			sourceTree = "<group>";
@@ -331,6 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				3D0087F424D9F01600618844 /* LoginViewModelTests.swift */,
+				3DAAEDDC24DB0D4000359FF8 /* DetailViewModelTests.swift */,
+				3DAAEDDA24DB068200359FF8 /* SqliteDatabaseManagerTests.swift */,
 				3D0FA8E524D55EE50023DB34 /* CarTrackCodeChallengeTests.swift */,
 				3D0FA8E724D55EE50023DB34 /* Info.plist */,
 			);
@@ -686,7 +695,7 @@
 				3D972CE024D724AE00E81751 /* Entities */,
 				3D0518FC24D60B75000A1E5A /* AppConstants */,
 				3DA9540B24D58E8C000172B3 /* Manager */,
-				3DA9540824D58837000172B3 /* ViewControllers */,
+				3DA9540824D58837000172B3 /* Modules */,
 				3DA9540724D58823000172B3 /* Scenes */,
 			);
 			path = Core;
@@ -700,14 +709,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		3DA9540824D58837000172B3 /* ViewControllers */ = {
+		3DA9540824D58837000172B3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				3D972CEE24D7319600E81751 /* MapViewController */,
 				3D972CB824D6BA0D00E81751 /* Detail */,
 				3D0518DF24D5FC6B000A1E5A /* Login */,
 			);
-			path = ViewControllers;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		3DA9540B24D58E8C000172B3 /* Manager */ = {
@@ -824,6 +833,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DAAEDDF24DB102D00359FF8 /* Readme.md in Resources */,
 				3D1B66C124D5F8890040B5FE /* FloatingPlaceholderTextfieldView.xib in Resources */,
 				3D972CDF24D722BC00E81751 /* UserDetailTableViewCell.xib in Resources */,
 				3D972CF624D7344D00E81751 /* VisualEffectBackgroundButtonView.xib in Resources */,
@@ -876,7 +886,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1039,7 +1049,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0087F524D9F01600618844 /* LoginViewModelTests.swift in Sources */,
+				3DAAEDDB24DB068200359FF8 /* SqliteDatabaseManagerTests.swift in Sources */,
 				3D0FA8E624D55EE50023DB34 /* CarTrackCodeChallengeTests.swift in Sources */,
+				3DAAEDDD24DB0D4000359FF8 /* DetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
