@@ -72,7 +72,7 @@ class DetailViewModel: BaseViewModel, DetailViewModelProtocol {
         
         let subject = PublishSubject<()>()
         
-        let parameters = ["limit": 2, "count": 2, "page": 2] as [String: Any]
+        let parameters = ["limit": 5, "skip": (sectionsRelay.value.first?.item.count ?? 0)] as [String: Any]
         
         let request = webService.users(parameters: parameters)
             .take(1)

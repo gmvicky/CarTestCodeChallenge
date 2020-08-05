@@ -87,5 +87,43 @@ class LoginViewModelTests: XCTestCase {
             .disposed(by: disposeBag)
 
     }
+    
+    func testCanProceedNoUsername() {
+        
+        let router = Router(viewController: nil)
+        viewModel = LoginViewModel(router: router, databaseManager: SqliteDatabaseManager.shared)
+        viewModel?.userNameRelay.accept(nil)
+        viewModel?.passwordRelay.accept("1")
+
+        if let country = CountryCodePickerViewController.Country(countryCode: "SG") {
+            viewModel?.countryCodePickerViewControllerDidPickCountry(country)
+        }
+        
+        viewModel?.canProceed
+            .subscribe(onNext: {
+                XCTAssert($0 == false, "Should NOT be able to proceed")
+            })
+            .disposed(by: disposeBag)
+
+    }
+    
+    func testCanProceedNoPassword() {
+        
+        let router = Router(viewController: nil)
+        viewModel = LoginViewModel(router: router, databaseManager: SqliteDatabaseManager.shared)
+        viewModel?.userNameRelay.accept("1")
+        viewModel?.passwordRelay.accept(nil)
+
+        if let country = CountryCodePickerViewController.Country(countryCode: "SG") {
+            viewModel?.countryCodePickerViewControllerDidPickCountry(country)
+        }
+        
+        viewModel?.canProceed
+            .subscribe(onNext: {
+                XCTAssert($0 == false, "Should NOT be able to proceed")
+            })
+            .disposed(by: disposeBag)
+
+    }
 
 }
